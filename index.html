@@ -26,10 +26,10 @@
         
         
         <ul id="top-menu-bar">
-            <li><a href="#">home</a></li>
-            <li><a href="#">skills</a></li>
-            <li><a href="#">projects</a></li>
-            <li><a href="#">languages</a></li>
+            <li><a href="#" onclick="showHomePage()">home</a></li>
+            <li><a href="#" onclick="showSkillsPage()">skills</a></li>
+            <li><a href="#" onclick="showProjectsPage()">projects</a></li>
+            <li><a href="#" onclick="showLanguagesPage()">languages</a></li>
         </ul>
     </header>
     
@@ -46,13 +46,13 @@
             <section>Second menu</section>
         </div>
         <div id="main" >
-            <div class="page">
+            <div id="home" class="page">
                 <h2>Home</h2>
                 <p>about me...</p>
             </div>
             
 
-            <div class="page">
+            <div id="skills" class="page">
                 <h2>Skills</h2>
                 <ul>
                     <li class="favorite">HTML</li>
@@ -61,10 +61,10 @@
                 </ul>
             </div>
                
-                <div class="page">
+            <div id="languages" class="page">
                  
-<h2>Known languages</h2>
-            <table border="1">
+                <h2>Known languages</h2>
+                <table border="1">
                 <tr>
                     <th>languages:</th>
                     <th>nivel:</th>
@@ -82,9 +82,13 @@
                     <td>engleza</td>
                     <td>good</td>
                 </tr>
-            </table>
-              </div>
-    
+                  </table>
+            </div>
+
+            <div  id="projects" class="page">
+                <h2>projects</h2>
+            </div>
+        </div>
     </section>
 
     <footer>
