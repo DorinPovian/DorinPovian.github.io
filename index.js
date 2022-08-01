@@ -21,11 +21,9 @@ console.warn(mottoElement.innerHTML);
 mottoElement.innerHTML += " & " + jobTitle;
 
 function hide(id) {
-  console.info("hide", id);
   document.getElementById(id).style.display = "none";
 }
 function show(id) {
-  console.warn("show", id);
   document.getElementById(id).style.display = "block";
 }
 
@@ -36,9 +34,15 @@ function hideAll() {
   hide("languages");
 }
 
+var activePage = "home";
+
 function showPage(id) {
-  console.warn("pls show me this page", id);
   hideAll();
   show(id);
+  console.warn("preview page", activePage);
+  document.getElementById("menu-" + activePage).classList.remove("active");
+  document.getElementById("menu-" + id).classList.add("active");
+  activePage = id;
 }
-showPage("home");
+
+showPage(activePage);
