@@ -58,10 +58,20 @@ iniEvents();
 function displaySkills() {
   var ul = document.querySelector("#skills ul");
   var skills = [
-    { name: "html", endorcement: 15 },
-    { name: "css", endorcement: 5 },
-    { name: "js", endorcement: 10 },
+    { name: "html", endorcement: 15, favorite: true },
+    { name: "css", endorcement: 5, favorite: true },
+    { name: "js", endorcement: 10, favorite: false },
   ];
+
+  skills.sort(function (a, b) {
+    //return a.endorcement - b.endorcement;
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return -1;
+    }
+  });
   console.info(skills);
   for (var i = 0; i < skills.length; i++) {
     ul.innerHTML += `<li>${skills[i].name} - ${skills[i].endorcement} </li>`;
