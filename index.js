@@ -27,7 +27,7 @@ function show(id) {
   document.getElementById(id).style.display = "block";
 }
 
-var activePage = "skills";
+var activePage = "home";
 
 function showPage(nextPage) {
   console.warn("change", activePage, "to", nextPage);
@@ -56,17 +56,15 @@ showPage(activePage);
 iniEvents();
 
 function displaySkills() {
-  console.info("display skills");
-  // initializare ; conditie ; post executie
-  for (var i = 1; i < 5; i++) {
-    console.info(` ${i} * 5= ${i * 5}`);
-  }
-
   var ul = document.querySelector("#skills ul");
-  var skills = ["html", "css", "js"];
+  var skills = [
+    { name: "html", endorcement: 15 },
+    { name: "css", endorcement: 5 },
+    { name: "js", endorcement: 10 },
+  ];
   console.info(skills);
   for (var i = 0; i < skills.length; i++) {
-    ul.innerHTML += `<li>${skills[i]}</li>`;
+    ul.innerHTML += `<li>${skills[i].name} - ${skills[i].endorcement} </li>`;
   }
 }
 
