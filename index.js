@@ -27,7 +27,7 @@ function show(id) {
   document.getElementById(id).style.display = "block";
 }
 
-var activePage = "home";
+var activePage = "skills";
 
 function showPage(nextPage) {
   console.warn("change", activePage, "to", nextPage);
@@ -44,7 +44,7 @@ function iniEvents() {
   document
     .getElementById("top-menu-bar")
     .addEventListener("click", function (e) {
-      var id = e.target.id.substring(5);
+      var id = e.target.getAttribute(`data-page`);
       console.warn("click pe menu", id, e.target.matches("a"));
       if (e.target.matches("a")) {
         showPage(id);
@@ -54,3 +54,20 @@ function iniEvents() {
 
 showPage(activePage);
 iniEvents();
+
+function displaySkills() {
+  console.info("display skills");
+  // initializare ; conditie ; post executie
+  for (var i = 1; i < 5; i++) {
+    console.info(` ${i} * 5= ${i * 5}`);
+  }
+
+  var ul = document.querySelector("#skills ul");
+  var skills = ["html", "css", "js"];
+  console.info(skills);
+  for (var i = 0; i < skills.length; i++) {
+    ul.innerHTML += `<li>${skills[i]}</li>`;
+  }
+}
+
+displaySkills();
