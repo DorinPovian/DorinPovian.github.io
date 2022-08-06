@@ -55,13 +55,8 @@ function iniEvents() {
 showPage(activePage);
 iniEvents();
 
-function displaySkills() {
+function displaySkills(skills) {
   var ul = document.querySelector("#skills ul");
-  var skills = [
-    { name: "html", endorcement: 15, favorite: true },
-    { name: "css", endorcement: 5, favorite: true },
-    { name: "js", endorcement: 10, favorite: false },
-  ];
 
   skills.sort(function (a, b) {
     //return a.endorcement - b.endorcement;
@@ -78,4 +73,13 @@ function displaySkills() {
   }
 }
 
-displaySkills();
+function loadSkills() {
+  fetch("skills.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (skills) {
+      displaySkills(skills);
+    });
+}
+loadSkills();
